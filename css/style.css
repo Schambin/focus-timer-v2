@@ -1,0 +1,87 @@
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Playpen Sans", cursive;
+}
+
+.app {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+#toggleMode {
+	position: absolute;
+	top: 3.2rem;
+	right: 3.2rem;
+	font-size: 3.2rem;
+	line-height: 0;
+
+    background-color: transparent;
+    border: none;
+}
+
+#toggleMode:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+}
+
+.timer {
+    font-size: 8.5rem;
+}
+
+.timerAndButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    width: 100%;
+
+    margin-right: 13rem;
+}
+
+.controls #play,
+#stop,
+#moreTime,
+#minusTime {
+    border: none;
+    background: none;
+    font-size: 4.8rem;
+    color: black;
+}
+
+.controls #play:hover,
+#stop:hover,
+#moreTime:hover,
+#minusTime:hover {
+    cursor: pointer;
+}
+
+.musicTypes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2.2rem;
+}
+
+#chillSongButton,
+#campingSongButton,
+#coffeeSongButton,
+#rainySongButton {
+    padding: 3.2rem;
+
+    border: none;
+    border-radius: 2.4rem;
+    color: #323238;
+
+    font-size: 3.2rem;
+    cursor: pointer;
+}
