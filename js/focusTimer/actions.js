@@ -1,10 +1,16 @@
+import state from './state.js'
+import * as timer from './timer.js'
+
 //Funções da aplicação de acordo com o data- nos botões do html
 export function toggleRunning() {
-    console.log('começar pausar contador')
+    state.isRunning = document.documentElement.classList.toggle('running');
+
+    timer.countDown()
 }
 
 export function reset() {
-    console.log('resetar contador')
+    state.isRunning = false;
+    document.documentElement.classList.remove('running')
 }
 
 export function moreTime() {
