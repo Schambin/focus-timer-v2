@@ -28,10 +28,26 @@
             ><span id="seconds">00</span>
           </div>
           <div class="controls">
-            <button id="play" class="ph ph-play-pause"></button>
-            <button id="stop" class="ph ph-stop"></button>
-            <button id="moreTime" class="ph ph-plus-circle"></button>
-            <button id="minusTime" class="ph ph-minus-circle"></button>
+            <button
+              data-action="toggleRunning"
+              id="play"
+              class="ph ph-play-pause"
+            ></button>
+            <button 
+            data-action="reset" 
+            id="stop" 
+            class="ph ph-stop"
+            ></button>
+            <button
+            data-action="moreTime" 
+            id="moreTime" 
+            class="ph ph-plus-circle"
+            ></button>
+            <button 
+            data-action="minusTime"  
+            id="minusTime" 
+            class="ph ph-minus-circle"
+            ></button>
           </div>
         </div>
 
