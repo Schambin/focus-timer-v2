@@ -1,14 +1,14 @@
 import { controls } from "./elements.js"
+import * as actions from "./actions.js"
 
-//eventos de clique na aplicação
+//eventos de clique na aplicação + lógica deles
 export function registerControls() {
     controls.addEventListener('click', (e) => {
-        e.preventDefault()
         const action = e.target.dataset.action
-        if (action === undefined) {
-            return
-        }
+        if (typeof actions[action] != "function") {
+        return
+    }
 
-        console.log(action)
-    })
+    actions[action]()
+})
 }
