@@ -16,7 +16,7 @@ export function countDown() {
         minutes--;
     }
 
-    if (minutes < 0) {
+    if (minutes < 0 || minutes > 60) {
         reset();
         return;
     }
