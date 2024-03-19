@@ -1,3 +1,3 @@
 import * as FocusTimer from './funcionality.js'
 
-FocusTimer.start(1, 0)
+FocusTimer.start(25, 0)
