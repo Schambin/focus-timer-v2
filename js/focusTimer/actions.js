@@ -1,7 +1,5 @@
 import state from './state.js'
 import * as timer from './timer.js'
-import * as el from './elements.js'
-import * as FocusTimer from '../funcionality.js'
 
 // Função para iniciar ou parar o timer
 export function toggleRunning() {
