@@ -7,9 +7,9 @@ export function registerControls() {
         const action = e.target.dataset.action
         //se clicar em algum botão = check se existe dentro de actions.js
         if (typeof actions[action] != "function") {
-        return
-    }
+            return
+        }
 
-    actions[action]()
-})
+        actions[action]()
+    })
 }

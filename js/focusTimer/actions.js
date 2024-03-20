@@ -19,7 +19,7 @@ export function reset() {
 // Função para adicionar 5 minutos ao timer
 export function moreTime() {
     let currentMinutes = state.minutes;
-    let newMinutes = currentMinutes + 5;
+    let newMinutes = Math.min(currentMinutes + 5, 60);
     state.minutes = newMinutes;
     timer.updateDisplay(newMinutes, state.seconds);
 }
@@ -27,7 +27,6 @@ export function moreTime() {
 // Função para reduzir 5 minutos do timer
 export function minusTime() {
     let currentMinutes = state.minutes;
-    // Garante que o valor mínimo de minutos seja 0
     let newMinutes = Math.max(currentMinutes - 5, 0);
     state.minutes = newMinutes;
     timer.updateDisplay(newMinutes, state.seconds);
