@@ -33,29 +33,41 @@
               id="play"
               class="ph ph-play-pause"
             ></button>
-            <button 
-            data-action="reset" 
-            id="stop" 
-            class="ph ph-stop"
+            <button data-action="reset" id="stop" class="ph ph-stop"></button>
+            <button
+              data-action="moreTime"
+              id="moreTime"
+              class="ph ph-plus-circle"
             ></button>
             <button
-            data-action="moreTime" 
-            id="moreTime" 
-            class="ph ph-plus-circle"
-            ></button>
-            <button 
-            data-action="minusTime"  
-            id="minusTime" 
-            class="ph ph-minus-circle"
+              data-action="minusTime"
+              id="minusTime"
+              class="ph ph-minus-circle"
             ></button>
           </div>
         </div>
 
         <div class="musicTypes">
-          <button id="chillSongButton" class="ph ph-tree-evergreen"></button>
-          <button id="rainySongButton" class="ph ph-cloud-rain"></button>
-          <button id="coffeeSongButton" class="ph ph-coffee"></button>
-          <button id="campingSongButton" class="ph ph-campfire"></button>
+          <button
+            data-action="startChillSong"
+            id="chillSongButton"
+            class="ph ph-tree-evergreen"
+          ></button>
+          <button
+            data-action="startRainySong"
+            id="rainySongButton"
+            class="ph ph-cloud-rain"
+          ></button>
+          <button
+            data-action="startCoffeeSong"
+            id="coffeeSongButton"
+            class="ph ph-coffee"
+          ></button>
+          <button
+            data-action="startCampSong"
+            id="campingSongButton"
+            class="ph ph-campfire"
+          ></button>
         </div>
       </div>
     </div>
