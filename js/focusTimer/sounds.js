@@ -1,14 +1,12 @@
 import state from "./state.js";
 
 export const chillSong = new Audio('../src/songs/Heart-Of-The-Ocean(chosic.com).mp3');
-export const rainySong = new Audio('../src/songs/Heart-Of-The-Ocean(chosic.com).mp3');
-export const coffeeSong = new Audio('../src/songs/Heart-Of-The-Ocean(chosic.com).mp3');
-export const campSong = new Audio('../src/songs/Heart-Of-The-Ocean(chosic.com).mp3');
+export const rainySong = new Audio('../src/songs/purrple-cat-time-to-think(chosic.com).mp3');
+export const coffeeSong = new Audio('../src/songs/Morning-Routine-Lofi-Study-Music(chosic.com).mp3');
+export const campSong = new Audio('../src/songs/Fire-Crackle-and-Flames-1(chosic.com).mp3');
 
-const chillSongButton = document.getElementById('chillSongButton')
-const rainySongButton = document.getElementById('rainySongButton')
-const coffeeSongButton = document.getElementById('coffeeSongButton')
-const campingSongButton = document.getElementById('campingSongButton')
+export const buttonPress = new Audio('../src/songs/buttonPress.wav')
+export const endTimerDing = new Audio('../src/songs/ding.mp3')
 
 export function toggleMuteState(buttonId) {
     const button = document.getElementById(buttonId);

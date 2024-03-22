@@ -1,6 +1,7 @@
 import state from "./state.js"
 import * as el from './elements.js'
 import { reset } from "./actions.js";
+import { endTimerDing } from './sounds.js'
 
 export function countDown() {
 
@@ -20,6 +21,7 @@ export function countDown() {
     }
 
     if (minutes < 0 || minutes > 60) {
+        endTimerDing.play()
         reset();
         return;
     }

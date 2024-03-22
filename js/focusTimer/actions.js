@@ -6,6 +6,7 @@ import * as sounds from './sounds.js'
 export function toggleRunning() {
     state.isRunning = document.documentElement.classList.toggle('running');
     timer.countDown();
+    sounds.buttonPress.play();
 }
 
 // Função para resetar o timer
@@ -13,6 +14,7 @@ export function reset() {
     state.isRunning = false;
     document.documentElement.classList.remove('running');
     timer.updateDisplay();
+    sounds.buttonPress.play();
 }
 
 // Função para adicionar 5 minutos ao timer
@@ -21,6 +23,7 @@ export function moreTime() {
     let newMinutes = Math.min(currentMinutes + 5, 60);
     state.minutes = newMinutes;
     timer.updateDisplay(newMinutes, state.seconds);
+    sounds.buttonPress.play();
 }
 
 // Função para reduzir 5 minutos do timer
@@ -29,6 +32,7 @@ export function minusTime() {
     let newMinutes = Math.max(currentMinutes - 5, 0);
     state.minutes = newMinutes;
     timer.updateDisplay(newMinutes, state.seconds);
+    sounds.buttonPress.play();
 }
 
 // Função para alternar a reprodução de música
