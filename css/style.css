@@ -105,7 +105,6 @@ body {
 
 .selected {
     /* transform: translateY(-5px); */
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-    background-color: #6ea1dc81;
-    -color: white;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.608);
+    background-color: #6ea1dca8;
 }

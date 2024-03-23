@@ -1,4 +1,6 @@
+// Songs, sounds and logic behind them
 import state from './state.js';
+import { musicTypes } from './elements.js'
 
 export const chillSong = new Audio('../src/songs/Heart-Of-The-Ocean(chosic.com).mp3');
 export const rainySong = new Audio('../src/songs/purrple-cat-time-to-think(chosic.com).mp3');
@@ -13,6 +15,12 @@ export function toggleMuteState(buttonId) {
 
     if (button) {
         button.addEventListener('click', () => {
+            const buttons = musicTypes;
+            buttons.forEach(otherButton => {
+                // check if some of the buttons already selected, remove if yes.
+                otherButton.classList.remove('selected');
+            });
+
             if (!chillSong.paused || !rainySong.paused || !coffeeSong.paused || !campSong.paused) {
                 state.isMuted = true;
             } else {
@@ -20,35 +28,30 @@ export function toggleMuteState(buttonId) {
             }
 
             chillSong.pause();
-            button.classList.remove('selected')
             rainySong.pause();
-            button.classList.remove('selected')
             coffeeSong.pause();
-            button.classList.remove('selected')
             campSong.pause();
 
             if (!state.isMuted) {
                 if (buttonId === 'chillSongButton') {
                     chillSong.play();
                     chillSong.loop = true;
-                    button.classList.add('selected')
                 } else if (buttonId === 'rainySongButton') {
                     rainySong.play();
                     rainySong.loop = true;
-                    button.classList.add('selected')
                 } else if (buttonId === 'coffeeSongButton') {
                     coffeeSong.play();
                     coffeeSong.lop = true;
-                    button.classList.add('selected')
                 } else if (buttonId === 'campingSongButton') {
                     campSong.play();
                     campSong.loop = true;
-                    button.classList.add('selected')
                 }
+                button.classList.add('selected');
             }
-        })
+        });
     }
 }
+
 
 toggleMuteState('chillSongButton');
 toggleMuteState('rainySongButton');
