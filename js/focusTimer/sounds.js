@@ -1,5 +1,12 @@
 import state from './state.js';
-import { chillSong, rainySong, coffeeSong, campSong } from './elements.js';
+
+export const chillSong = new Audio('../src/songs/Heart-Of-The-Ocean(chosic.com).mp3');
+export const rainySong = new Audio('../src/songs/purrple-cat-time-to-think(chosic.com).mp3');
+export const coffeeSong = new Audio('../src/songs/Morning-Routine-Lofi-Study-Music(chosic.com).mp3');
+export const campSong = new Audio('../src/songs/Fire-Crackle-and-Flames-1(chosic.com).mp3');
+
+export const buttonPress = new Audio('../src/songs/buttonPress.wav');
+export const endTimerDing = new Audio('../src/songs/ding.mp3');
 
 export function toggleMuteState(buttonId) {
     const button = document.getElementById(buttonId);
@@ -13,13 +20,12 @@ export function toggleMuteState(buttonId) {
             }
 
             chillSong.pause();
-            button.classList.remove('selected');
+            button.classList.remove('selected')
             rainySong.pause();
-            button.classList.remove('selected');
+            button.classList.remove('selected')
             coffeeSong.pause();
-            button.classList.remove('selected');
+            button.classList.remove('selected')
             campSong.pause();
-            button.classList.remove('selected');
 
             if (!state.isMuted) {
                 if (buttonId === 'chillSongButton') {
