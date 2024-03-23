@@ -1,62 +1,36 @@
-import state from './state.js'
-import * as timer from './timer.js'
-import * as sounds from './sounds.js'
+import state from './state.js';
+import * as timer from './timer.js';
+import { buttonPress, endTimerDing } from './elements.js';
 
-// Função para iniciar ou parar o timer
+// func to start n stop timer
 export function toggleRunning() {
     state.isRunning = document.documentElement.classList.toggle('running');
     timer.countDown();
-    sounds.buttonPress.play();
+    buttonPress.play();
 }
 
-// Função para resetar o timer
+// reset timer
 export function reset() {
     state.isRunning = false;
     document.documentElement.classList.remove('running');
     timer.updateDisplay();
-    sounds.buttonPress.play();
+    buttonPress.play();
 }
 
-// Função para adicionar 5 minutos ao timer
+// add 5 minutes to timer
 export function moreTime() {
     let currentMinutes = state.minutes;
     let newMinutes = Math.min(currentMinutes + 5, 60);
     state.minutes = newMinutes;
     timer.updateDisplay(newMinutes, state.seconds);
-    sounds.buttonPress.play();
+    buttonPress.play();
 }
 
-// Função para reduzir 5 minutos do timer
+//reduce 5 minutes from timer
 export function minusTime() {
     let currentMinutes = state.minutes;
     let newMinutes = Math.max(currentMinutes - 5, 0);
     state.minutes = newMinutes;
     timer.updateDisplay(newMinutes, state.seconds);
-    sounds.buttonPress.play();
-}
-
-// Função para alternar a reprodução de música
-export function toggleMusic() {
-    state.isMuted = document.documentElement.classList.toggle('music-on');
-
-    if (state.isMuted) {
-        sounds.bgAudio.play();
-    } else {
-        sounds.bgAudio.pause();
-    }
-}
-
-// Função para iniciar a reprodução da música correspondente ao botão clicado
-export function startSong(song) {
-    if (song === 'startChillSong') {
-        sounds.chillSong.play();
-    } else if (song === 'startRainySong') {
-        sounds.rainySong.play();
-    } else if (song === 'startCoffeeSong') {
-        sounds.coffeeSong.play();
-    } else if (song === 'startCampSong') {
-        sounds.campSong.play();
-    } else {
-        console.log(`Botão não reconhecido: ${song}`);
-    }
+    buttonPress.play();
 }
