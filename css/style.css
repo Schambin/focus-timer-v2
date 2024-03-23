@@ -13,17 +13,6 @@ body {
     place-content: center;
 }
 
-#toggleMode {
-	position: absolute;
-	top: 3.2rem;
-	right: 3.2rem;
-	font-size: 3.2rem;
-	line-height: 0;
-
-    background-color: transparent;
-    border: none;
-}
-
 #toggleMode:hover {
     cursor: pointer;
 }
@@ -49,9 +38,9 @@ body {
 }
 
 .controls #play,
-#stop,
-#moreTime,
-#minusTime {
+.controls #stop,
+.controls #moreTime,
+.controls #minusTime {
     border: none;
     background: none;
     font-size: 4.8rem;
@@ -64,10 +53,8 @@ body {
 #moreTime:hover,
 #minusTime:hover {
     cursor: pointer;
-    transform: scale(1.05); /* Aumenta um pouco o tamanho */
-    color: rgb(119, 92, 255); /* Altera a cor do texto */
-    background-color: rgba(255, 255, 255, 0.212); /* Altera a cor do texto */
-    border-radius: 50%;
+    transform: scale(1.05);
+    color: rgb(119, 92, 255);
 }
 
 .musicTypes {
@@ -100,11 +87,55 @@ body {
     cursor: pointer;
     background-color: rgb(191, 225, 255);
     transition: all 0.3s ease; 
-
+    
 }
 
 .selected {
-    /* transform: translateY(-5px); */
+    transform: translateY(5px);
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.608);
     background-color: #6ea1dca8;
+}
+
+#toggleMode {
+    position: absolute;
+    top: 3.2rem;
+    right: 3.2rem;
+    font-size: 3.2rem;
+    line-height: 0;
+
+    background-color: transparent;
+    border: none;
+}
+
+html.dark {
+    background-color: hsl(194, 5%, 7%);
+    color: white;
+}
+
+
+html.dark .ph-moon {
+    display: none;
+}
+
+html.dark .ph-sun {
+    color: white;
+}
+
+html.dark
+.controls #play,
+.controls #stop,
+.controls #moreTime,
+.controls #minusTime {
+    color:white;
+}
+
+html:not(.dark) .ph-sun{
+    display: none;
+}
+
+html:not(.dark) .controls #play,
+html:not(.dark) .controls #stop,
+html:not(.dark) .controls #moreTime,
+html:not(.dark) .controls #minusTime {
+    color: black;
 }
