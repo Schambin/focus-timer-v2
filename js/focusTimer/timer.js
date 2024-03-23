@@ -1,7 +1,7 @@
 import state from './state.js';
 import * as el from './elements.js';
 import { reset } from './actions.js';
-import { endTimerDing } from './elements.js';
+import { endTimerDing } from './sounds.js';
 
 export function countDown() {
     clearTimeout(state.countdownId)
